@@ -1,26 +1,62 @@
+
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
 export const colors = {
-  primary: '#162456',    // Material Blue
-  secondary: '#193cb8',  // Darker Blue
-  accent: '#64B5F6',     // Light Blue
-  background: '#101824',  // Keeping dark background
-  backgroundAlt: '#162133',  // Keeping dark background
-  text: '#e3e3e3',       // Keeping light text
-  grey: '#90CAF9',       // Light Blue Grey
-  card: '#193cb8',       // Keeping dark card background
+  primary: '#FFDA63',      // Yellow from logo
+  secondary: '#77B353',    // Green from logo
+  accent: '#A6633F',       // Brown from logo
+  background: '#FFFFFF',   // White background
+  backgroundAlt: '#F8F9FA', // Light grey background
+  text: '#000000',         // Black text
+  textLight: '#666666',    // Grey text
+  card: '#FFFFFF',         // White card background
+  border: '#E0E0E0',       // Light border
+  success: '#77B353',      // Green for success
+  warning: '#FFDA63',      // Yellow for warning
+  error: '#DC3545',        // Red for error
+  shadow: 'rgba(0, 0, 0, 0.1)',
 };
 
 export const buttonStyles = StyleSheet.create({
-  instructionsButton: {
+  primary: {
     backgroundColor: colors.primary,
-    alignSelf: 'center',
-    width: '100%',
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: `0px 4px 8px ${colors.shadow}`,
+    elevation: 4,
   },
-  backButton: {
-    backgroundColor: colors.backgroundAlt,
-    alignSelf: 'center',
-    width: '100%',
+  secondary: {
+    backgroundColor: colors.secondary,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: `0px 4px 8px ${colors.shadow}`,
+    elevation: 4,
+  },
+  outline: {
+    backgroundColor: 'transparent',
+    borderWidth: 2,
+    borderColor: colors.primary,
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: colors.text,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  textLight: {
+    color: colors.background,
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
 
@@ -35,55 +71,116 @@ export const commonStyles = StyleSheet.create({
     backgroundColor: colors.background,
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   content: {
     flex: 1,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+  },
+  centerContent: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    maxWidth: 800,
-    width: '100%',
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '800',
-    textAlign: 'center',
     color: colors.text,
-    marginBottom: 10
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: colors.text,
+    marginBottom: 16,
   },
   text: {
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
     color: colors.text,
-    marginBottom: 8,
     lineHeight: 24,
-    textAlign: 'center',
   },
-  section: {
-    width: '100%',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  buttonContainer: {
-    width: '100%',
-    alignItems: 'center',
-    paddingHorizontal: 20,
+  textLight: {
+    fontSize: 14,
+    fontWeight: '400',
+    color: colors.textLight,
+    lineHeight: 20,
   },
   card: {
-    backgroundColor: colors.backgroundAlt,
-    borderColor: colors.grey,
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
+    backgroundColor: colors.card,
+    borderRadius: 16,
+    padding: 16,
     marginVertical: 8,
-    width: '100%',
-    boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.1)',
-    elevation: 2,
+    boxShadow: `0px 4px 12px ${colors.shadow}`,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
-  icon: {
-    width: 60,
-    height: 60,
-    tintColor: "white",
+  productCard: {
+    backgroundColor: colors.card,
+    borderRadius: 16,
+    padding: 16,
+    marginVertical: 8,
+    marginHorizontal: 4,
+    boxShadow: `0px 4px 12px ${colors.shadow}`,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: colors.border,
+    flex: 1,
+    minWidth: 160,
+  },
+  input: {
+    backgroundColor: colors.backgroundAlt,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    fontSize: 16,
+    color: colors.text,
+    borderWidth: 1,
+    borderColor: colors.border,
+    marginVertical: 8,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    backgroundColor: colors.background,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+  },
+  bottomTab: {
+    flexDirection: 'row',
+    backgroundColor: colors.background,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderTopWidth: 1,
+    borderTopColor: colors.border,
+    boxShadow: `0px -2px 8px ${colors.shadow}`,
+    elevation: 8,
+  },
+  tabItem: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  badge: {
+    backgroundColor: colors.error,
+    borderRadius: 10,
+    minWidth: 20,
+    height: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: -8,
+    right: -8,
+  },
+  badgeText: {
+    color: colors.background,
+    fontSize: 12,
+    fontWeight: '600',
   },
 });
